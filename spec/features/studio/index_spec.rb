@@ -7,12 +7,12 @@ RSpec.describe "As a User" do
         @studio_2 = Studio.create!(name: "Universal Pictures")
         @studio_3 = Studio.create!(name: "Lionsgate Films")
 
-        # @movie_1 = @studio_1.create!(name: "Toy Story" , creation_year: 1995, genre: "Adventure" )
+        @movie_1 = @studio_1.create!(name: "Toy Story" , creation_year: 1995, genre: "Adventure" )
         # @movie_2 = @studio_2.create!(name: "Despicable Me" , creation_year: 2010, genre: "Family" )
         # @movie_3 = @studio_3.create!(name: "The Hunger Games" , creation_year: 2012, genre: "Thriller" )
     end 
     it "I see a list of all of the movie studios " do
-        visits studios_path
+        visit studios_path
         
         expect(page).to have_contents("Pixar")
 
@@ -24,15 +24,15 @@ RSpec.describe "As a User" do
     # it "underneath each studio, I see the names of all of its movies. " do 
 
     #   within("#studio-#{@studio_1.id}") do
-    #     expect(page).to have_link("Toy Story")
+    #     expect(page).to have_content("Toy Story")
     #   end
 
     #   within("#studio-#{@studio_2.id}") do
-    #     expect(page).to have_link("Despicable Me")
+    #     expect(page).to have_content("Despicable Me")
     #   end
 
     #   within("#studio-#{@studio_3.id}") do
-    #     expect(page).to have_link("The Hunger Games")
+    #     expect(page).to have_content("The Hunger Games")
     #   end
     # end 
   end

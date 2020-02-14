@@ -4,7 +4,7 @@
    <section class="grid-container" id= 'studio-<%=studio.id%>'>
       <h3>Name: <%= studio.name %></h3> 
         <% studio.movies.each do |movie|  %>
-            <section class="grid-container" id= 'studio-<%=studio.id%>'>
+            <section id= 'movies'>
                 <h4>Movies: <%= movie.name %></h4> 
             </section>
         <% end %>
